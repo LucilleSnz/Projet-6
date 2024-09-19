@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    display: flex;
+    justify-content: center;
+    max-width: 1200px;
+    background-color: #fff;
+
+}
+
+.homepage {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; // Pour que la page remplisse toute la hauteur de l'écran
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: #fff;
+
+    .logo {
+        width: 150px; 
+
+        nav {
+            a {
+                margin-left: 20px;
+                text-decoration: none;
+                color: rgb(255, 255, 255);
+                font-weight: bold;
+            }
+        }
+    }
+
+    .banner {
+        width: 1140px;
+        height: 223px; // La bannière occupe 50% de la hauteur de l'écran
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-size: cover;
+        background-position: center;
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+        border: 1px;
+        border-color: (0,0,0,1);
+        top:163px;
+        border-radius: 30px;
+        margin-bottom: 40px;
+    }
+
+    .banner .banner-text{
+        width: 1140px;
+        height: 223px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 30px;
+    }
+    .locations-section {
+        flex: 1; // Prend le reste de l'espace disponible
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 50px;
+        background-color: rgb(245, 245, 245);
+        border-radius: 20px;
+
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+
+            .card {
+                background-color: #ff6060;
+                height: 300px;
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+                color: white;
+                padding: 10px;
+                font-weight: bold;
+                font-size: 18px;
+                text-align: center;
+            }
+        }
+    }   
+}}
