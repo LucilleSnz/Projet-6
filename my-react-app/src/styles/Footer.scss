@@ -1,0 +1,28 @@
+@import 'variables';
+
+footer {
+    display: flex;
+    justify-content: $center;
+    align-items: $center;
+    flex-direction: column;
+    height: 25vh;
+    min-height: 209px;
+    background-color: $black-color;
+    color: $white-color;
+    gap: 40px;
+    @media(max-width: 765px){
+        gap: 10px;
+    }
+    .footer__logo {
+        width: 122px;
+        height: 39.44px;
+    }
+    .footer__text {
+        font-size: $large-font-size;
+        @media(max-width: 765px){
+            width: 30%;
+            text-align: center;
+            font-size: 0.75rem;
+        }
+    }
+}

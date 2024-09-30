@@ -1,17 +1,43 @@
-.banner {
-    width: 100%;
-    height: 300px;  // Taille ajustable
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+@import 'variables';
 
-    .banner-text {
-        font-size: 2.5rem;
-        color: white;
-        background-color: rgba(0, 0, 0, 0.4);  // Overlay pour rendre le texte plus lisible
-        padding: 10px 20px;
-        border-radius: 8px;
+.banner {
+    height: 223px;
+    @media(max-width: 765px){
+        height: 28vw;
+        border-radius: $main-components--border-radius;
+    }
+    display: flex;
+    justify-content: $center;
+    align-items: $center;
+    border-radius: $main-components-larger--border-radius;
+    position: relative;
+    background-size: cover;
+    background-position: $center;
+    &-overlay {
+        position: absolute;
+        inset: 0;
+        border-radius: $main-components-larger--border-radius;
+        @media(max-width: 765px){
+            border-radius: $main-components--border-radius;
         }
+    }
+    h1 {
+        z-index: 2;
+        font-size: 3rem;
+        color: $white-color;
+        margin: 16px;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        @media(max-width: 765px){
+            font-size: 5.5vw;
+            text-shadow: none;
+            padding-right: 3.6rem;
+        }
+        @media(max-width: 425px){
+            font-size: 6.4vw;
+        }
+        @media(max-width: 374px){
+            text-align: center;
+            padding-right: 0;
+        }
+    }
 }

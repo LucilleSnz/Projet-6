@@ -1,0 +1,42 @@
+@import 'variables';
+
+.error-page {
+    gap: 139px;
+    @media (max-width: 765px){
+        gap: 113px;
+    }
+    .error-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: $center;
+        text-align: $center;
+        gap: 139px;
+        @media (max-width: 765px){
+            gap: 113px;
+        }
+        h1, p {
+            color: $slideshow-main-color; 
+        }
+        h1 {
+            font-size: 18rem;
+            @media(max-width: 765px){
+                font-size: 30vw;
+            }
+        }
+        p {
+            font-weight: 500;
+            font-size: 36px;
+            text-align: center;
+            @media(max-width: 765px){
+                font-size: 4.5vw;
+                padding: 0 50px;
+            }
+        }
+        a {
+            color: $black-color;
+            @media(max-width: 765px){
+                font-size: 3.5vw;
+            }
+        }
+    }
+}

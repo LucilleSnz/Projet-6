@@ -1,0 +1,209 @@
+@import 'variables';
+@import 'Collapse.scss';
+
+.slideshow {
+    .carousel-container {
+        position: relative;
+        .carousel-picture {
+            width: $fullpercentage;
+            height: 415px;
+            min-height: 255px;
+            object-fit: cover;
+            border-radius: 25px;
+            @media (max-width: 765px){
+                height: 43vw;
+                border-radius: 10px;
+            }
+        }
+        .left-arrow, .right-arrow {
+            position: absolute;
+            top: $halfpercentage;
+            cursor: pointer;
+            font-size: $large-font-size;
+            background: none;
+            transform: translateY(-$halfpercentage);
+            &.left-arrow {left: 10px;}
+            &.right-arrow {right: 10px;}
+            @media (max-width: 765px){
+                min-height: 24px;
+                height: 5vw;
+            }
+        }
+        .numeration {
+            position: absolute;
+            left: $halfpercentage;
+            transform: translateX(-$halfpercentage);
+            color: $white-color;
+            font-size: $medium-font-size;
+            font-weight: 500;
+            bottom: 30px;
+            @media (max-width: 765px){
+                display: none;
+            }
+        }
+    }
+    .carousel-description {
+        margin-top: 24px;
+        @media (max-width: 765px){
+            margin-top: 0;
+        }
+        .carousel-description--infos-part {
+            display: flex;
+            justify-content: space-between;
+            gap: 35px;
+            @media (max-width: 900px){
+                flex-direction: column;
+            }
+            @media (max-width: 765px){
+                gap: 0;
+            }
+            .title-and-location-and-tags {
+                margin-top: 6px;
+                h2, p {
+                    font-weight: 500;
+                }
+                h2 {
+                    font-size: 2.25rem;
+                    padding-bottom: 5px;
+                    color: $slideshow-main-color;
+                    @media (max-width: 765px){
+                        font-size: $medium-font-size;
+                    }
+                }
+                p {
+                    font-size: $medium-font-size;
+                    @media(max-width: 765px){
+                        font-size: 0.875rem;
+                    }
+                }
+                .tags-container {
+                    display: flex;
+                    justify-content: space-between;
+                    .tags-list {
+                        list-style-type: none;
+                        display: flex;
+                        gap: 10px;
+                        align-items: $center;
+                        margin-top: 24px;
+                        flex-wrap: wrap;
+                        @media(max-width: 765px){
+                          font-size: 0.625rem;
+                          margin-top: 10px;
+                        }
+                        .tags-list-tag {
+                            padding: 3px 40px;
+                            background-color: $slideshow-main-color; 
+                            color: $white-color;
+                            font-weight: 700;
+                            border-radius: $main-components--border-radius;
+                            @media(max-width: 765px){
+                                border-radius: $main-components-smaller--border-radius;
+                                padding: 3px 25px;
+                            }
+                        }
+                    }
+                }
+            }
+            .host-infos-and-ratings {
+                display: flex;
+                flex-direction: column;
+                gap: 21px;
+                @media (max-width: 900px){
+                    flex-direction: row-reverse;
+                    justify-content: space-between;
+                    align-items: $center;
+                }
+                @media(max-width: 765px){
+                    object-fit: contain;
+                }
+                .host-infos {
+                    display: flex;
+                    gap: 10px;
+                    justify-content: flex-end;
+                    @media(max-width: 765px){
+                    }
+                    .hostName {
+                        display: flex;
+                        flex-direction: column;
+                        text-align: end;
+                        justify-content: $center;
+                        gap: 6px;
+                        color: $slideshow-main-color;
+                        font-size: $medium-font-size;
+                        @media(max-width: 765px){
+                            font-size: 3vw;
+                            gap: 3px
+                        }
+                    }
+                    svg {
+                        @media(max-width: 765px){
+                            width: 9vw;
+                        }
+                    }
+                }
+                .ratings {
+                    min-height: 22px;
+                    .responsive-svg {
+                        @media(max-width: 765px){
+                            width: 29vw;
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }
+    .collapse-container {
+        display: flex;
+        flex-direction: row;
+        gap: 76px;
+        margin: 24px 0 0;
+        @media (max-width: 900px){
+            flex-direction: column;
+            gap: 20px;
+        }
+        @media (max-width: 765px){
+            margin-top: 13px;
+        }
+        @media (max-width: 425px){
+            margin-top: 0;
+        }
+        .collapse-button {
+            width: $fullpercentage;
+            .collapse-title {
+                border-radius: $main-components--border-radius;
+                @media(max-width: 765px){
+                    border-radius: $main-components-smaller--border-radius;
+                    padding: 0 10px;
+                    font-size: 2.5vw
+                }
+                @media(max-width: 425px){
+                    font-size: 3vw;
+                }
+                .arrow {
+                    img {
+                        @media(max-width: 500px){
+                            height: 6.5vw;
+                        }
+                    }
+                }
+            }
+            .collapse-content {
+                font-size: $medium-font-size;
+                line-height: 1.6em;
+                border-radius: $main-components--border-radius;
+                padding: 10px 20px;
+                @media (max-width: 765px){
+                    font-size: 2.5vw;
+                }
+                @media(max-width: 425px){
+                    font-size: 3vw;
+                }
+                .equipments-list {
+                    list-style-type: none;
+                }
+            }
+        }
+    }
+}
+

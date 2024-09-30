@@ -1,0 +1,27 @@
+@import 'variables';
+@import 'Header';
+@import 'Footer';
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    gap: 50px;
+    @media(max-width: 765px){
+        gap: 27px;
+    }
+
+}
+.about-page {
+    gap: 38px;
+    @media(max-width: 765px){
+        gap: 19px;
+    }
+}
+header, main {
+    flex: 1;
+    margin: 0 100px;
+    @media (max-width: 765px){
+        margin: 0 25px;
+    }
+}

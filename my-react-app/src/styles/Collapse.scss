@@ -1,34 +1,66 @@
-.collapse {
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    overflow: hidden;
-}
+@import 'variables';
 
-.collapse-header {
+.collapse-container {
+    margin: 38px 7.5vw 0;
     display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    background-color: #f0f0f0;
-    cursor: pointer;
-}
-
-.collapse-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-in-out;
-    padding: 0 10px;
-}
-
-.collapse-content.show {
-    max-height: 200px;
-    padding: 10px;
-}
-
-.arrow {
-    transition: transform 0.3s;
-}
-
-.arrow.open {
-    transform: rotate(180deg);  /* Faire pivoter la flèche quand c'est ouvert */
+    flex-direction: column;
+    gap: 30px;
+    @media(max-width: 765px){
+        margin: 19px 0 0;
+        gap: 20px;
+    }
+    .collapse-button {
+        .collapse-title {
+        width: $fullpercentage;
+        display: flex;
+        justify-content: space-between;
+        align-items: $center;
+        font-size: $large-font-size;
+        font-weight: 700;
+        color: $white-color;
+        background-color: $slideshow-main-color;
+        border-radius: $main-components-smaller--border-radius;
+        border: none;
+        padding: 10px 20px 10px 15px;
+        @media(max-width: 765px){
+            padding: 0 10px;
+            font-size: 2.5vw;
+        }
+        @media(max-width: 425px){
+            padding: 0 10px;
+            font-size: 3.5vw;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+        .arrow {
+            transition: transform 0.3s ease-in-out;
+            &.open {
+                transform: rotate(-180deg);
+            }
+            img {
+                @media (max-width: 765px){
+                    width: 6.5vw;
+                }
+                @media(max-width: 425px){
+                    width: 7vw
+                }
+            } 
+        }
+        }
+        .collapse-content {
+            background-color: rgba(246, 246, 246, 0.45);
+            padding: 30px;
+            animation: slideDown 0.3s ease-out forwards;
+            border-radius: $main-components-smaller--border-radius;
+            @media (max-width: 765px){
+                font-size: 2.5vw;
+                padding: 15px 20px;
+            }
+            @media(max-width: 425px){
+                font-size: 3vw;
+            }
+        }
+    }
+    
 }

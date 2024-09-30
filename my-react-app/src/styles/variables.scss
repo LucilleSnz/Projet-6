@@ -1,0 +1,25 @@
+// Couleurs //
+$black-color: black;
+$white-color: white;
+$slideshow-main-color: rgba(255, 96, 96, 1);
+
+// Polices //
+$default-font-size: 1rem;
+$large-font-size: 1.5rem;
+$medium-font-size: 1.125rem;
+
+// Dispositions //
+$center : center;
+$main-components--border-radius: 10px;
+$main-components-larger--border-radius: 25px;
+$main-components-smaller--border-radius: 5px;
+
+// Pourcentages //
+$halfpercentage : 50%;
+$fullpercentage: 100%;
+$null: 0;
+
+// Mixins //
+@mixin box-shadow($shadow){
+    box-shadow: $shadow;
+}
