@@ -1,30 +1,39 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import '../styles/Collapse.scss';
 import Arrow from '../assets/arrow-logo.png';
 
 
-function Collapse({ title, children }) { // Déclare un composant fonctionnel nommé Collapse qui prend en argument "title" et "children".
-    const [isOpen, setIsOpen] = useState(false); // Déclare un état local "isOpen" avec la fonction "setIsOpen" pour le modifier. Il est initialisé à "false".
 
-    const toggleCollapse = () => { // Déclare une fonction qui inverse la valeur de "isOpen".
-        setIsOpen(!isOpen); // Modifie l'état : passe de "false" à "true" et vice-versa.
+function Collapse({ title, children }) {
+    const [isOpen, setIsOpen] = useState(false); // Etat local pour chaque liste déroulante
+    const contentRef = useRef(null); // Référence pour obtenir la hauteur du contenu
+
+    const toggleCollapse = () => {
+        setIsOpen(!isOpen);
     };
 
-    return ( // Retourne le JSX du composant.
-        <div className="collapse-button"> {/* Définis une div avec une classe CSS pour gérer l'ensemble du composant. */}
-            <button className="collapse-title" onClick={toggleCollapse}> {/* Un bouton qui déclenche "toggleCollapse" lors du clic. */}
-                {title} {/* Affiche le titre passé en prop. */}
-                <span className={`arrow ${isOpen ? 'open' : 'closed'}`}> {/* Ajoute une classe dynamique basée sur l'état "isOpen" (open/closed). */}
-                    <img src={Arrow} alt='arrow logo'></img> {/* Affiche l'image de l'icône de flèche. */}
+    return (
+        <div className="collapse-button">
+            <button className="collapse-title" onClick={toggleCollapse}>
+                {title}
+                <span className={`arrow ${isOpen ? 'open' : 'closed'}`}>
+                    <img src={Arrow} alt="arrow logo" />
                 </span>
             </button>
-            {isOpen && ( // Si "isOpen" est vrai, le contenu est affiché.
-                <div className="collapse-content"> {/* Div qui contient les enfants passés en prop. */}
-                    {children} {/* Affiche le contenu passé à l'intérieur du Collapse. */}
-                </div>
-            )}
+            <div
+                className={`collapse-content ${isOpen ? 'open' : ''}`}
+                ref={contentRef}
+                style={{
+                    maxHeight: isOpen ? `${contentRef.current.scrollHeight}px` : '0px',
+                    padding: isOpen ? '10px' : '0px', // Gère le padding en fonction de l'ouverture
+                    transition: 'max-height 0.3s ease-in-out, padding 0.3s ease-in-out', // Animation douce sur le padding
+                }}
+            >
+                {children}
+            </div>
         </div>
     );
 }
 
-export default Collapse; // Exporte le composant Collapse pour l'utiliser ailleurs.
+export default Collapse;
+ // Exporte le composant Collapse pour l'utiliser ailleurs.

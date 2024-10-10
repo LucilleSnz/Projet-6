@@ -5,11 +5,15 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
+    overflow: hidden;
     @media(max-width: 765px){
         margin: 19px 0 0;
         gap: 20px;
     }
     .collapse-button {
+        width: 100%;
+        margin-bottom: 10px;
+    
         .collapse-title {
         width: $fullpercentage;
         display: flex;
@@ -34,10 +38,15 @@
             cursor: pointer;
         }
         .arrow {
-            transition: transform 0.3s ease-in-out;
+            transition: transform 0.2s ease-in-out;
             &.open {
                 transform: rotate(-180deg);
             }
+            .closed {
+                transform: rotate(0deg);
+            }
+            
+
             img {
                 @media (max-width: 765px){
                     width: 6.5vw;
@@ -48,10 +57,17 @@
             } 
         }
         }
+
+        .collapse-content .open{
+                max-height: 1000px;
+                padding: 10px; 
+        }
+        
         .collapse-content {
             background-color: rgba(246, 246, 246, 0.45);
             padding: 30px;
-            animation: slideDown 0.3s ease-out forwards;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
             border-radius: $main-components-smaller--border-radius;
             @media (max-width: 765px){
                 font-size: 2.5vw;
